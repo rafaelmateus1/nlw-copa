@@ -1,8 +1,9 @@
 body {
     background-color: #121214;
     background-image: url(./assets/bg.svg);
-    background-position-x: center;
-    background-position-y: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 * {
@@ -11,6 +12,25 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+:root {
+    --card-color-primary: #F7DD43;
+    --card-border-title-color: #F7DD43;
+    --card-background-color: #1D1C19;
+}
+
+body.blue {
+    --card-color-primary: #338af3;
+    --card-border-title-color: #338af3;
+    --card-background-color: #202024;
+}
+
+body.green {
+    --card-color-primary: #047C3F;
+    --card-border-title-color: #047C3F;
+    --card-background-color: #1A1F1B;
+}
+
 
 ul {
     list-style: none;
@@ -64,13 +84,13 @@ header {
     padding: 32px 23px;
     text-align: center;
     border-radius: 6px;
-    border-bottom: 2px solid #F7DD43;
-    background: #1D1C19;    
+    border-bottom: 2px solid var(--card-color-primary);
+    background: var(--card-background-color);    
     
 }
 
 .card h2 {
-    border: 1px solid #F7DD43 ;
+    border: 1px solid var(--card-border-title-color) ;
     border-radius: 6px;
     padding: 8px 16px;
     display:flex;
@@ -103,7 +123,8 @@ header {
 }
 
 .card {
-    animation: appear 1s;
+    opacity: 0;
+    animation: appear 1s forwards;
 }
 
 @keyframes appear {
@@ -113,5 +134,11 @@ header {
     } 
     100% {
         opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    #cards {
+        flex-direction: row;
     }
 }
