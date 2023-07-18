@@ -17,16 +17,10 @@ function createCard(date, day, games) {
 </div>`
 }
 
-document.querySelector("#app").innerHTML = `
-<header>
-    <img src="/assets/logo.svg" alt="Logo NLW">
-</header>
-<main id="cards">
-    ${createCard("24/11", "quinta",
+document.querySelector("#cards").innerHTML = 
+    createCard("24/11", "quinta",
     createGame("brazil", "07:00", "serbia") + 
-    createGame("portugal", "14:00", "southkorea")
-    )}
-    ${createCard("28/11", "segunda", createGame("brazil", "13:00", "switzerland"))}
-    ${createCard("21/11", "segunda", createGame("brazil", "08:00", "cameroon"))}
-</main>
-`
+    createGame("portugal", "14:00", "southkorea"))+
+    createCard("28/11", "segunda", createGame("brazil", "13:00", "switzerland"))+
+    createCard("21/11", "segunda", createGame("brazil", "08:00", "cameroon"))
+
